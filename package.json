@@ -1,0 +1,36 @@
+{
+  "name": "hack",
+  "version": "0.5.0",
+  "description": "",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "@mui/icons-material": "^5.13.7",
+    "@mui/material": "^5.13.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.0.2"
+  },
+  "scripts": {
+    "start:dev": "react-scripts start",
+    "start:prod": "node server.js",
+    "build": "react-scripts build",
+    "webdash": "webdash serve",
+    "eslint:fix": "eslint src/** --fix",
+    "cypress:open": "cypress open"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
