@@ -12,6 +12,7 @@ export const Check = () => {
             { name: 'Device 1', releaseDate: '01/01/2020', warrantyExpiration: '01/01/2022', serialNumber: '12345' },
             { name: 'Device 2', releaseDate: '01/01/2021', warrantyExpiration: '01/01/2023', serialNumber: '67890' },
             { name: 'Device 3', releaseDate: '01/01/2019', warrantyExpiration: '01/01/2021', serialNumber: '24680' },
+            { name: 'Device 4', releaseDate: '01/01/2015', warrantyExpiration: '01/01/2024', serialNumber: '126578' },
         ]);
     };
 
@@ -48,7 +49,7 @@ export const Check = () => {
     };
 
     const isExpired = (date) => {
-        return moment(date, 'MM/DD/YYYY').isBefore('2023-01-01');
+        return moment(date, 'MM/DD/YYYY').isBefore('2023-10-14');
     };
 
     return (
@@ -80,6 +81,7 @@ export const Check = () => {
                                 <TableCell style={styles.tableCell}>Release Date</TableCell>
                                 <TableCell style={styles.tableCell}>Warranty Expiration</TableCell>
                                 <TableCell style={styles.tableCell}>Serial Number</TableCell>
+                                <TableCell style={styles.tableCell}>OpenSource Firmware</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -92,9 +94,10 @@ export const Check = () => {
                                     <TableCell style={styles.tableCell}>
                                         <Button
                                             component="a"
+                                            size="small"
                                             href="https://www.google.com"
                                         >
-                                            Alternative Firmware
+                                            Link
                                         </Button>
                                     </TableCell>
                                 </TableRow>
