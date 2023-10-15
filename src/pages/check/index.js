@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { TextField, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import moment from 'moment';
+import { TextField, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const Check = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -39,6 +41,14 @@ export const Check = () => {
         tableCell: {
             border: '1px solid #66b8fb',
         },
+        expired: {
+            backgroundColor: 'red',
+            color: 'white',
+        },
+    };
+
+    const isExpired = (date) => {
+        return moment(date, 'MM/DD/YYYY').isBefore('2023-01-01');
     };
 
     return (
@@ -49,7 +59,18 @@ export const Check = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={styles.input}
             />
-            <Button variant="contained" onClick={handleSearch} style={styles.button}>Search</Button>
+            <Button variant="contained"
+                onClick={handleSearch}
+                style={styles.button}
+                sx={{
+                    backgroundColor: "white",
+                    color: "#66b8fb",
+                    fontWeight: 900,
+                    border: "2px solid #66b8fb",
+                }}
+            >
+                Search
+            </Button>
             {devices.length > 0 && (
                 <TableContainer component={Paper} style={styles.tableContainer}>
                     <Table>
@@ -63,11 +84,19 @@ export const Check = () => {
                         </TableHead>
                         <TableBody>
                             {devices.map((device) => (
-                                <TableRow key={device.name}>
+                                <TableRow key={device.name} style={isExpired(device.warrantyExpiration) ? styles.expired : null}>
                                     <TableCell style={styles.tableCell}>{device.name}</TableCell>
                                     <TableCell style={styles.tableCell}>{device.releaseDate}</TableCell>
                                     <TableCell style={styles.tableCell}>{device.warrantyExpiration}</TableCell>
                                     <TableCell style={styles.tableCell}>{device.serialNumber}</TableCell>
+                                    <TableCell style={styles.tableCell}>
+                                        <Button
+                                            component="a"
+                                            href="https://www.google.com"
+                                        >
+                                            Alternative Firmware
+                                        </Button>
+                                    </TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>

@@ -10,28 +10,6 @@ export const Main = () => {
 					keeps you up to date on security news related to IoT devices.
 				</Typography>
 			</Typography>
-			<table>
-				<thead>
-					<tr>
-						<th>Device Name</th>
-						<th>Expiration Date</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr color="warning">
-						<td>Device 1</td>
-						<td>2022-12-31</td>
-					</tr>
-					<tr>
-						<td>Device 2</td>
-						<td>2024-01-01</td>
-					</tr>
-					<tr style={{ color: "red" }}>
-						<td>Device 3</td>
-						<td>2023-06-30</td>
-					</tr>
-				</tbody>
-			</table>
 			<Button
 				variant="contained"
 				component={Link}
