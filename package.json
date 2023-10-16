@@ -1,9 +1,8 @@
 {
-  "name": "hack",
+  "name": "fkn-ideathon",
   "version": "0.5.0",
   "description": "",
   "private": true,
-  "main": "server.js",
   "dependencies": {
     "@mui/icons-material": "^5.13.7",
     "@mui/material": "^5.13.7",
@@ -15,12 +14,7 @@
     "styled-components": "^6.0.2"
   },
   "scripts": {
-    "start:dev": "react-scripts start",
-    "start:prod": "node server.js",
-    "build": "react-scripts build",
-    "webdash": "webdash serve",
-    "eslint:fix": "eslint src/** --fix",
-    "cypress:open": "cypress open"
+    "start": "react-scripts start"
   },
   "browserslist": {
     "production": [
